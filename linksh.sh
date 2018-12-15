@@ -4,7 +4,8 @@
 # Create a symbolic link to a .sh script file.
 #
 # Features:
-# - remove script .sh suffix to the link name (e.g. linking 'myscrpt.sh' will create 'myscript' link);
+# - remove script .sh suffix to the link name (e.g. linking 'myscrpt.sh' will
+#   create 'myscript' link);
 # - add execution permission to the .sh script.
 #
 
@@ -18,7 +19,7 @@ fi
 if [ ! -f $1 ] || [[ ${1: -3} != .sh ]]; then
 	echo "linksh: File '$1' not found or suffix differs from '.sh'"
 	exit 1
-fi	
+fi
 
 CANONICAL_FILENAME=$(readlink -f $1)
 LINK_NAME=$(basename -s .sh $CANONICAL_FILENAME)
